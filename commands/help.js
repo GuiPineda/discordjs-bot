@@ -14,7 +14,6 @@ const helpEmbed = new EmbedBuilder()
 		{ name: '\u200B', value: '\u200B' },
 		{ name: '/zaralhar', value: 'Zaralha usuários em um canal de voz', inline: false },
         { name: '/cls', value: 'Apagar até 100 mensagens do canal', inline: false },
-		{ name: '/biel', value: 'Saiba mais sobre o biel', inline: false },
 	)
 	.addFields({ name: '/help', value: 'Comandos do πBOT', inline: false })
 	.setImage(imgURL)
