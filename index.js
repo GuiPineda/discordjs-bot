@@ -12,7 +12,7 @@ const path = require("node:path")
 const commandsPath = path.join(__dirname, "commands")
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
 
-const client = new Client({intents: [GatewayIntentBits.Guilds]})
+const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions]})
 client.commands = new Collection()
 
 for (const file of commandFiles) {

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, Client, Message, MessageEmbed } = require("discord.js")
+const { SlashCommandBuilder, Client, Message, MessageEmbed, GatewayIntentBits } = require("discord.js")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,7 +14,7 @@ module.exports = {
       try {
         const target = interaction.options.getMember("usuario");
 
-        if (!interaction.member.permissions.has('MOVE_MEMBERS')) {
+        if (!interaction.member.permissions.has ('MOVE_MEMBERS')) {
             await interaction.reply("Você não possuí permissão para mover membros.")
             return;
         }

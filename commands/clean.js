@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js")
+const { SlashCommandBuilder, GatewayIntentBits } = require("discord.js")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,9 +7,10 @@ module.exports = {
     .addIntegerOption(option =>
         option.setName('quantidade')
           .setDescription('Informe a quantidade a deletar(max 10)')
-          .setRequired(true)),
+          .setRequired(true))
+          .setDMPermission(false),
 
-    async execute(interaction) {
+    async execute(interaction, client) {
         if (!interaction.member.permissions.has('MANAGE_MESSAGES')) {
             await interaction.reply("Você não possuí permissão para deletar mensagens.")
             return;
